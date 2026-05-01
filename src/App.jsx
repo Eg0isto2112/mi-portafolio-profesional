@@ -1,8 +1,8 @@
-import Navbar from "./components/Navbar/Navbar"; // Con 'N' mayúscula al final
+import Navbar from "./components/Navbar/Navbar"; 
 import Hero from "./components/Hero/Hero"; 
 import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
-import Contacto from "./components/Contacto/Contacto"; // Nueva importación
+import Contacto from "./components/Contacto/Contacto"; 
 import Footer from "./components/Footer/Footer";
 import Projects from "./components/Projects/Projects";
 import "./styles/global.css";
@@ -15,7 +15,7 @@ function App() {
       <About />
       <Projects />
       <Skills />
-      <Contacto /> {/* Sección añadida */}
+      <Contacto /> 
       <Footer />
     </main>
   );
