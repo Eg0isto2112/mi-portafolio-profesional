@@ -1,0 +1,73 @@
+/* 1. RESET GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-deep: #020617; /* Fondo oscuro profundo */
+  --blue-tech: #3a86ff; /* Tu azul de Ingeniería */
+  --cyan-tech: #00e5ff; /* Tu cian de IA */
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: var(--bg-deep);
+  color: #fff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* 2. CONFIGURACIÓN DE SECCIONES (Para About, Skills, etc.) */
+.section {
+  width: 100%;
+  padding: 100px 10%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, var(--blue-tech), var(--cyan-tech));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* 3. GRID DE PROYECTOS (Base) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* 4. SCROLLBAR ESTILO TECH */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue-tech);
+  border-radius: 10px;
+}
+
+/* 5. RESPONSIVE */
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 5%;
+  }
+}

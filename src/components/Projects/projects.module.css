@@ -1,0 +1,129 @@
+.projectsSection {
+  padding: 100px 20px;
+  background-color: #020617;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #ffffff, #3a86ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.underline {
+  width: 50px;
+  height: 4px;
+  background: #3a86ff;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(58, 134, 255, 0.1);
+  padding: 35px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+
+.card:hover {
+  border-color: #00e5ff;
+  background: rgba(58, 134, 255, 0.08);
+  box-shadow: 0 0 30px rgba(58, 134, 255, 0.15);
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+/* FILA DE ICONOS TECNOLÓGICOS */
+.techIconRow {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.iconWrapper {
+  position: relative;
+  font-size: 1.4rem;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.iconWrapper:hover {
+  color: #00e5ff;
+}
+
+/* ESTILO DEL TOOLTIP */
+.tooltip {
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3a86ff;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+/* Triángulo del tooltip */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #3a86ff transparent transparent transparent;
+}
+
+.cardFooter {
+  display: flex;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.iconLink {
+  color: #64748b;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.iconLink:hover {
+  color: #00e5ff;
+}

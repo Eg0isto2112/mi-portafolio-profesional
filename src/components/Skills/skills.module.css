@@ -1,0 +1,144 @@
+/* CORRECCIÓN: Selector de clase en lugar de ID y adición de scroll-margin-top */
+.skillsMainSection {
+  background-color: #020617 !important;
+  min-height: 100vh;
+  padding: 80px 10% !important;
+  position: relative;
+  overflow: hidden;
+  /* CORRECCIÓN: Evita que el Navbar tape el título al hacer scroll */
+  scroll-margin-top: 80px; 
+}
+
+.techOverlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: radial-gradient(circle at 2px 2px, rgba(58, 134, 255, 0.1) 1px, transparent 0);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+.glitchTitle {
+  /* Nuevo color degradado tecnológico */
+  background: linear-gradient(90deg, #3a86ff, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 12px;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  font-weight: 800;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-bottom: 10px;
+  filter: drop-shadow(0 0 10px rgba(58, 134, 255, 0.3));
+}
+
+.glitchTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3a86ff, transparent);
+}
+
+.panelGrid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 25px !important;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skillPanel {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(58, 134, 255, 0.2);
+  padding: 25px;
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.skillPanel:hover {
+  border-color: var(--panel-color);
+  box-shadow: 0 0 20px rgba(58, 134, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--panel-color);
+  padding-left: 12px;
+}
+
+.panelIcon {
+  color: var(--panel-color);
+  font-size: 1.2rem;
+}
+
+.panelHeader h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.panelBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skillLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.decor {
+  color: var(--panel-color);
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.skillText {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.skillPanel:hover .skillText {
+  color: #fff;
+}
+
+.cornerDecor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--panel-color);
+  border-right: 2px solid var(--panel-color);
+}
+
+@media (max-width: 768px) {
+  .panelGrid {
+    grid-template-columns: 1fr !important;
+  }
+  .glitchTitle {
+    font-size: 1.8rem;
+    letter-spacing: 6px;
+  }
+}

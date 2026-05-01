@@ -1,0 +1,168 @@
+.aboutContainer {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #020617;
+  overflow: hidden;
+  padding: 80px 20px;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(58, 134, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(58, 134, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle, black, transparent 90%);
+  z-index: 1;
+}
+
+.scanline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(58, 134, 255, 0.05) 50%,
+    transparent
+  );
+  top: -100%;
+  z-index: 2;
+  animation: scan 10s linear infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(200%); }
+}
+
+.aboutContent {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.textBlock {
+  flex: 1;
+  max-width: 600px;
+}
+
+.techTitle {
+  font-size: clamp(32px, 5vw, 48px);
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  border-left: 4px solid #3a86ff;
+  padding-left: 20px;
+}
+
+/* DESCRIPCIÓN JUSTIFICADA Y ESTILO TERMINAL */
+.description {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #94a3b8;
+  text-align: justify;
+  min-height: 220px;
+}
+
+.cursor {
+  color: #3a86ff;
+  font-weight: bold;
+}
+
+/* BOTÓN DE DESCARGA */
+.buttonWrapper {
+  margin-top: 35px;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: transparent;
+  color: #3a86ff;
+  border: 1px solid #3a86ff;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.downloadBtn:hover {
+  background: rgba(58, 134, 255, 0.1);
+  box-shadow: 0 0 20px rgba(58, 134, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 1.3rem;
+}
+
+/* AJUSTE CÍRCULO E IMAGEN 240X288 */
+.scannerWrapper {
+  position: relative;
+  width: 320px; 
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotatingRing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px dashed rgba(58, 134, 255, 0.2);
+  animation: rotate 25s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.imageFrame {
+  width: 280px; 
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #3a86ff;
+  background-color: #ffffff; /* Fondo blanco para los costados */
+  box-shadow: 0 0 30px rgba(58, 134, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Foto de 240x288 íntegra */
+  display: block;
+}
+
+@media (max-width: 850px) {
+  .aboutContent { flex-direction: column-reverse; text-align: center; gap: 45px; }
+  .description { text-align: justify; min-height: auto; }
+  .techTitle { 
+    border-left: none; 
+    border-bottom: 3px solid #3a86ff; 
+    padding-bottom: 10px; 
+    display: inline-block; 
+  }
+}
